@@ -1,0 +1,60 @@
+name: Timing
+version: ${project.version}
+main: de.timing.Timing
+api-version: '1.21'
+folia-supported: true
+description: Server timing management with countdown timers, custom MOTD, and announcements
+
+authors:
+  - Frxme
+
+commands:
+  beginningtimer:
+    description: Control the server beginning countdown timer
+    usage: /<command> <start|stop|status> [seconds]
+    permission: timing.beginningtimer
+    aliases: [btimer]
+  restarttimer:
+    description: Control the server restart/stop countdown timer (auto-stops server)
+    usage: /<command> <start|stop|status> [seconds]
+    permission: timing.restarttimer
+    aliases: [rtimer]
+  endtimer:
+    description: Control the End dimension countdown timer
+    usage: /<command> <start|stop|status> [seconds]
+    permission: timing.endtimer
+    aliases: [etimer]
+  motd:
+    description: Edit the server MOTD with formatting options
+    usage: /<command> [preview|enable|disable|reload]
+    permission: timing.motd
+  announcer:
+    description: Open the announcer GUI or manage announcements
+    usage: /<command> [send <name>|reload]
+    permission: timing.announcer
+
+permissions:
+  timing.*:
+    description: All Timing permissions
+    default: op
+    children:
+      timing.beginningtimer: true
+      timing.restarttimer: true
+      timing.endtimer: true
+      timing.motd: true
+      timing.announcer: true
+  timing.beginningtimer:
+    description: Use the beginning timer command
+    default: op
+  timing.restarttimer:
+    description: Use the restart timer command
+    default: op
+  timing.endtimer:
+    description: Use the end timer command
+    default: op
+  timing.motd:
+    description: Use the MOTD editor command
+    default: op
+  timing.announcer:
+    description: Use the announcer command and GUI
+    default: op

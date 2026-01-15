@@ -1,0 +1,51 @@
+# Timing Plugin Configuration
+
+# Server State (automatically managed - DO NOT EDIT MANUALLY)
+server-state:
+  started: false  # true when server has been started/opened, false otherwise
+  beginning-timer-remaining: 0  # Saved timer state (auto-resumes on restart)
+  end-timer-remaining: 0  # Saved timer state (auto-resumes on restart)
+
+# Custom MOTD Settings (MiniMessage format)
+motd:
+  enabled: true
+  line1: "<gradient:gold:yellow><bold>My Server</bold></gradient>"
+  line2: "<gray>Welcome to the server!</gray>"
+
+# Beginning Timer Settings (for server opening countdown)
+beginning-timer:
+  # MOTD shown in server list during countdown (overrides custom MOTD)
+  motd-format: "<red><bold>Server Starting</bold></red>\n<yellow>Starting in: <white>{time}</white></yellow>"
+  # Message shown when kicking players during countdown
+  kick-message: "<red><bold>Server is Starting!</bold></red>\n\n<yellow>The server will open in <white>{time}</white></yellow>\n<gray>Please wait and try again soon!</gray>"
+  # Whether to disable whitelist when countdown ends
+  disable-whitelist-on-end: true
+
+# Restart Timer Settings (for server restart/stop - AUTO STOPS SERVER)
+restart-timer:
+  # MOTD shown in server list during countdown (overrides custom MOTD)
+  motd-format: "<red><bold>Server Stopping</bold></red>\n<yellow>Stopping in: <white>{time}</white></yellow>"
+  # Message shown when kicking players during countdown
+  kick-message: "<red><bold>Server is Stopping!</bold></red>\n\n<yellow>The server will stop in <white>{time}</white></yellow>\n<gray>Please save your progress!</gray>"
+  # Whether to kick all players when countdown ends
+  kick-all-on-end: true
+  # Message to show when kicking at the end
+  final-kick-message: "<red><bold>Server Stopped</bold></red>\n\n<gray>Please reconnect shortly!</gray>"
+
+# End Timer Settings (for End dimension opening countdown)
+end-timer:
+  # MOTD shown in server list during countdown (only when server is started, overrides custom MOTD)
+  motd-format: "<light_purple><bold>The End</bold></light_purple>\n<yellow>Opens in: <white>{time}</white></yellow>"
+
+# Announcements (managed via GUI, but can be edited here)
+announcements:
+  # Example announcement:
+  # welcome:
+  #   message: "<gradient:gold:yellow>Welcome to the server!</gradient>"
+  #   type: TITLE  # ACTION_BAR, TITLE, or SUBTITLE
+  #   subtitle: "<gray>Enjoy your stay!</gray>"  # Only for TITLE type
+  #   fade-in: 10   # Ticks for fade in (TITLE only)
+  #   stay: 70      # Ticks to stay on screen (TITLE only)
+  #   fade-out: 20  # Ticks for fade out (TITLE only)
+  #   interval: 300 # Seconds between automatic broadcasts (0 = manual only)
+  #   enabled: true
